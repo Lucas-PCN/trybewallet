@@ -1,1 +1,17 @@
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
+const INITIAL_WALLET_STATE = {
+  currency: 'BRL',
+  currencies: [],
+  expenses: [],
+  error: '',
+  isLoading: false,
+  exchangeRates: {},
+};
+
+const wallet = (state = INITIAL_WALLET_STATE, action) => {
+  switch (action.type) {
+  default:
+    return state;
+  }
+};
+
+export default wallet;
