@@ -3,16 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { saveCurrencies } from '../actions';
+import WalletForm from '../components/WalletForm';
 
 class Wallet extends React.Component {
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     arrayOfCurrencies: [],
-  //   };
-  // }
-
   componentDidMount() {
     this.fetchCurrencies();
   }
@@ -25,10 +18,6 @@ class Wallet extends React.Component {
     const arrayWithoutUSDT = Object.keys(requestObject)
       .filter((currency) => currency !== 'USDT');
 
-    // this.setState({
-    //   arrayOfCurrencies: [objWithoutUSDT],
-    // });
-
     dispatch(saveCurrencies(arrayWithoutUSDT));
   }
 
@@ -36,6 +25,7 @@ class Wallet extends React.Component {
     return (
       <section>
         <Header />
+        <WalletForm />
       </section>
     );
   }
