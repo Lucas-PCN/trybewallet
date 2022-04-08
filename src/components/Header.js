@@ -8,7 +8,9 @@ const Header = ({ email, expenses, currency }) => (
     <p>
       <span data-testid="total-field">
         {
-          expenses.reduce((acc, item) => acc + item, 0)
+          expenses.reduce(
+            (previousValue, currentValue) => previousValue + currentValue, 0,
+          )
         }
       </span>
       {' '}
@@ -21,7 +23,7 @@ const Header = ({ email, expenses, currency }) => (
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  expenses: PropTypes.number.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.number).isRequired,
   currency: PropTypes.string.isRequired,
 };
 
