@@ -17,7 +17,7 @@ const wallet = (state = INITIAL_WALLET_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.expenseInfos],
-      totalValue: state.totalValue + action.value,
+      totalValue: state.totalValue + parseFloat(action.value),
     };
   default:
     return state;
