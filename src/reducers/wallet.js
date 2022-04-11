@@ -4,6 +4,7 @@ const INITIAL_WALLET_STATE = {
   currencies: [],
   expenses: [],
   totalValue: 0,
+  expenseValue: 0,
 };
 
 const wallet = (state = INITIAL_WALLET_STATE, action) => {
@@ -18,6 +19,7 @@ const wallet = (state = INITIAL_WALLET_STATE, action) => {
       ...state,
       expenses: [...state.expenses, action.expenseInfos],
       totalValue: state.totalValue + parseFloat(action.value),
+      expenseValue: action.value,
     };
   default:
     return state;
